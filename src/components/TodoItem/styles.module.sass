@@ -10,6 +10,11 @@
     margin: 0 0 40px
     font-family: sans-serif
 
+.titleDone
+    text-decoration: line-through
+    margin: 0 0 40px
+    font-family: sans-serif
+
 @mixin button()
     display: inline-block
     padding: 10px 20px
@@ -30,3 +35,18 @@
     background-color: #a00
     color: #fff
 
+.editBtn
+    @include button()
+    background-color: #008080
+    color: #fff
+
+
+.saveBtn
+    @include button()
+    background-color: #0af
+    color: #fff
+
+.input 
+    padding: 12px 20px
+    margin: 8px 0
+    box-sizing: border-box
