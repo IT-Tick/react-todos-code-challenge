@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 
-import styles from './styles.module.sass';
+import styles from './styles.module.scss';
 
 function TodoItem() {
   return (
