@@ -15,7 +15,7 @@ import CancelPresentationIcon from '@material-ui/icons/CancelPresentation';
 // eslint-disable-next-line no-unused-vars
 import styles from './styles.module.scss';
 
-function TodoForm({todo = {}, editMode, setEditMode = (v) => v}) {
+function TodoForm({todo = {}, editMode = false, setEditMode = (v) => v}) {
   const dispatch = useDispatch();
   const [text, setText] = React.useState(todo ? todo.text : '');
   const handleSubmit = (e) => {
