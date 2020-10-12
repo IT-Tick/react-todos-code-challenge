@@ -1,9 +1,23 @@
 .input
     box-sizing: border-box
-    width: 100%
+    width: 85%
     padding: 20px 30px
     font-size: 2rem
     margin-bottom: 25px
     border: 1px solid #888
     outline: 0
 
+@mixin button()
+    display: inline-block
+    padding: 20px 0px
+    border-radius: 0
+    border: 0
+    font-size: 2rem
+    &:last-child
+
+.addBtn
+    @include button()
+    float: right
+    width: 10%
+    background-color: #0275d8
+    color: #fff
