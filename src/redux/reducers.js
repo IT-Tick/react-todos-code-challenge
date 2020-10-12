@@ -8,6 +8,14 @@ export const TodoReducer = (state = InitalTodoState, action) => {
             return [...state, { id: uuid(), todo: action.payload, completed: false }]
         case "REMOVE_TODO":
             return state.filter(todo => todo.id !== action.payload)
+        case "EDIT_TODO":
+            return state.map(todo => {
+                if (todo.id === action.payload.id) {
+                    return { ...todo, todo: action.payload.todo }
+                } else {
+                    return todo
+                }
+            })
         case "TOGGLE_TODO":
             return state.map(todo => {
                 if (todo.id === action.payload) {

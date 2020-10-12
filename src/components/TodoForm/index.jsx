@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-import styles from './styles.module.sass';
 import { connect } from "react-redux";
 import { addTodo } from "../../redux/actions";
+import PropTypes from 'prop-types';
+import styles from './styles.module.sass';
 
 function TodoForm({ addTodo }) {
   const [input, setInput] = useState("");
@@ -25,6 +26,10 @@ function TodoForm({ addTodo }) {
     </form>
   );
 }
+
+TodoForm.propTypes = {
+  addTodo: PropTypes.func
+};
 
 const mapDispatchToProos = dispatch => ({
   addTodo: todo => dispatch(addTodo(todo))

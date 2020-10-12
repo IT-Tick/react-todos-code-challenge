@@ -1,7 +1,8 @@
 import React from 'react';
-import TodoItem from '../TodoItem';
 
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
+import TodoItem from '../TodoItem';
 
 function TodoList({ todos }) {
   return (
@@ -12,6 +13,10 @@ function TodoList({ todos }) {
     </div>
   );
 }
+
+TodoList.propTypes = {
+  todos: PropTypes.array
+};
 
 const mapStateToProps = state => ({
   todos: state
