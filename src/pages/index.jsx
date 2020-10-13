@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.sass'
 import Header from '../components/Header';
 import ContentContainer from '../components/ContentContainer';
 import TodoForm from '../components/TodoForm';
