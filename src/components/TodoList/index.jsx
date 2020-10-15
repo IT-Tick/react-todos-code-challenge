@@ -7,7 +7,7 @@ function TodoList() {
     <div>
       {
         state.todos.map((todo, index) => {
-          return (<TodoItem key={index} todo={todo} />)
+          return (<TodoItem key={index} todo={todo} dispatch={dispatch} />)
         })
       }
     </div>
