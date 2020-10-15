@@ -2,6 +2,7 @@ import React, {useReducer, createContext } from 'react'
 import Reducer from './reducer'
 import {getRandomNumber} from '../utils/helperFunctions'
 
+export const Context = createContext();
 
 const initialState = {
   todos: [
@@ -13,9 +14,9 @@ const initialState = {
 const Store = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState)
   return (
-    <div>
-
-    </div>
+    <Context.Provider value={[state, dispatch]}>
+      {children}
+    </Context.Provider>
   )
 }
 
