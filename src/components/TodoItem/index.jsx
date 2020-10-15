@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.sass';
-
+import EditModal from '../EditModal/editModal'
 function TodoItem({ todo, dispatch }) {
 
   const handleDelete = () => {
@@ -13,8 +13,8 @@ function TodoItem({ todo, dispatch }) {
     <div className={styles.card}>
       <h2 className={styles.title}>{todo.title}</h2>
       <button className={styles.completeBtn}>Complete</button>
-      <button className={styles.deleteBtn}
-      onClick = {handleDelete}>Delete</button>
+      <button className={styles.deleteBtn} onClick = {handleDelete}>Delete</button>
+      <EditModal />
     </div>
   );
 }
