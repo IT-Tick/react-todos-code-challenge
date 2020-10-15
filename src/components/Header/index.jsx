@@ -2,11 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Navbar, NavbarBrand } from "reactstrap";
 
-import styles from "./styles.module.sass";
-
 function Header({ title }) {
   return (
-    <Navbar color="faded" light color="warning">
+    <Navbar color="warning" light>
       <NavbarBrand href="/" className="mr-auto">
         {title}
       </NavbarBrand>

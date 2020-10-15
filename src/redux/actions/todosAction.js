@@ -1,5 +1,11 @@
 import * as types from '../types';
 
+function fetchTodos() {
+    return {
+        type: types.FETCH_TODOS,
+    };
+}
+
 function addTodo(todo) {
     return {
         type: types.ADD_TODO,
@@ -36,6 +42,7 @@ function setTodoComplete(todoId, isCompleted) {
 }
 
 export default {
+    fetchTodos,
     addTodo,
     editTodo,
     deleteTodo,

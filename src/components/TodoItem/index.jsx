@@ -18,6 +18,12 @@ function TodoItem({ todoData, deleteTodo, editTodo, setTodoComplete }) {
       setIsEditMode(true);
     }
   };
+
+  const editTodoData = () => {
+    setIsEditMode(!isEditMode);
+    editTodo(todoData.id, todo);
+  };
+
   return (
     <Card
       body
@@ -43,7 +49,7 @@ function TodoItem({ todoData, deleteTodo, editTodo, setTodoComplete }) {
         >
           {todoData.isCompleted ? "Completed" : "UnComplete"}
         </Button>
-        <Button color="info" onClick={() => setIsEditMode(!isEditMode)}>
+        <Button color="info" onClick={editTodoData}>
           Edit
         </Button>
         <Button color="danger" onClick={() => deleteTodo(todoData.id)}>

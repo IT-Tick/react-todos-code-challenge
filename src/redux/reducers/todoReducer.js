@@ -5,12 +5,21 @@ const initialState = {
 };
 
 const saveToLocalStorage = function (state) {
-    localStorage.setItem('todos', state);
+    localStorage.setItem('todos', JSON.stringify(state));
+}
+
+const retrieveFromLocalStorage = function () {
+    return JSON.parse(localStorage.getItem('todos'))
 }
 
 export default function (state = initialState, action) {
     let newState;
     switch (action.type) {
+        case types.FETCH_TODOS:
+            const retrievedState = retrieveFromLocalStorage() || initialState
+            newState = { ...retrievedState }
+            return newState
+
         case types.ADD_TODO:
             newState = { ...state, todosData: state.todosData.concat({ id: state.todosData.length, title: action.payload, isCompleted: false }) }
             saveToLocalStorage(newState)
