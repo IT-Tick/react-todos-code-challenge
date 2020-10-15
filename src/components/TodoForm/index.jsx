@@ -1,5 +1,3 @@
-src / components / TodoForm / index.jsx;
-
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { todosAction } from "../../redux/actions";
