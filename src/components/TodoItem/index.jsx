@@ -7,8 +7,15 @@ function TodoItem({ todo, dispatch }) {
     dispatch({
       type: 'REMOVE_TODO',
       payload: todo.id
-    })
-  }
+    })}
+
+  const handleComplete = () => {
+        dispatch(
+          {
+            type: 'COMPLETE_TODO',
+            payload: todo.id
+          })}
+
   return (
     <div className={styles.card}>
       <h2 className={styles.title}
@@ -16,10 +23,10 @@ function TodoItem({ todo, dispatch }) {
         {todo.title}
       </h2>
       <button className={completed ? styles.disabledBtn : styles.completeBtn}
-        disabled={completed}>Complete</button>
+        disabled={completed} onClick={handleComplete} >Complete</button>
 
       <button className={completed ? styles.disabledBtn : styles.deleteBtn}
-       disabled={completed}
+        disabled={completed}
         onClick={handleDelete}>Delete</button>
 
       <EditModal todo={todo} dispatch={dispatch} />

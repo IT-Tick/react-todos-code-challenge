@@ -20,6 +20,17 @@ const Reducer = (state, action) => {
           return todo
         })
       };
+    case 'COMPLETE_TODO':
+      return {
+        ...state,
+        todos: state.todos.map( todo => {
+          if ( todo.id === action.payload)
+          {
+            return {...todo, completed: true}
+          }
+          return todo
+        })
+      }
     default:
       return state
   }
