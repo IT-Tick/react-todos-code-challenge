@@ -1,11 +1,10 @@
 import React from 'react';
-
 import styles from './styles.module.sass';
 
-function TodoItem() {
+function TodoItem({ todo }) {
   return (
     <div className={styles.card}>
-      <h2 className={styles.title}>Title</h2>
+      <h2 className={styles.title}>{todo.title}</h2>
       <button className={styles.completeBtn}>Complete</button>
       <button className={styles.deleteBtn}>Delete</button>
     </div>
