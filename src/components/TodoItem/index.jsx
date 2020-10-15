@@ -14,7 +14,7 @@ function TodoItem({ todo, dispatch }) {
       <h2 className={styles.title}>{todo.title}</h2>
       <button className={styles.completeBtn}>Complete</button>
       <button className={styles.deleteBtn} onClick = {handleDelete}>Delete</button>
-      <EditModal />
+      <EditModal todo={todo}/>
     </div>
   );
 }
