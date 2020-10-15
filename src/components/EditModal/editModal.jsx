@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
+import styles from '../TodoItem/styles.module.sass'
 function EditModal() {
   const [show, setShow] = useState(false);
 
@@ -8,9 +9,9 @@ function EditModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <button className={styles.editBtn} variant="primary" onClick={handleShow}>
         Edit
-      </Button>
+      </button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
