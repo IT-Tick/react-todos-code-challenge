@@ -9,6 +9,7 @@ import { todosAction } from "../redux/actions";
 function IndexPage({ fetchTodos }) {
   useEffect(() => {
     fetchTodos();
+    // eslint-disable-next-line
   }, []);
   return (
     <main className={styles}>
