@@ -1,5 +1,5 @@
 const Reducer = (state, action) => {
-  switch(action.type){
+  switch (action.type) {
     case 'ADD_TODO':
       return {
         ...state,
@@ -8,11 +8,21 @@ const Reducer = (state, action) => {
     case 'REMOVE_TODO':
       return {
         ...state,
-        todos: state.todos.filter( todo => todo.id !== action.payload)
+        todos: state.todos.filter(todo => todo.id !== action.payload)
       }
+    case 'EDIT_TODO':
+      return {
+        ...state,
+        todos: state.todos.map(todo => {
+          if (todo.id === action.payload.id) {
+            return {...todo, title: action.payload.newTitle}
+          }
+          return todo
+        })
+      };
     default:
       return state
-    }
   }
+}
 
-  export default Reducer;
+export default Reducer;
