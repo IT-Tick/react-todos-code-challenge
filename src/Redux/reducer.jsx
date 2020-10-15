@@ -31,6 +31,8 @@ const Reducer = (state, action) => {
           return todo
         })
       }
+      case 'SET_STATE':
+        return action.payload
     default:
       return state
   }
