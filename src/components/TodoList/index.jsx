@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import TodoItem from '../TodoItem';
-
+import { Context } from '../../Redux/store'
 function TodoList() {
+  const [state, dispatch] = useContext(Context)
   return (
     <div>
-      <TodoItem />
-      <TodoItem />
+      {state.todos.map(todo => (
+        <h1>
+          {todo.title}
+        </h1>
+      ))}
     </div>
   );
 }
