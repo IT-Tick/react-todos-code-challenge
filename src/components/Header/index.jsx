@@ -1,15 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
+import { Navbar, NavbarBrand } from "reactstrap";
 
-import styles from './styles.module.sass';
+import styles from "./styles.module.sass";
 
-function Header({title}) {
+function Header({ title }) {
   return (
-    <header className={styles.header}>
-      <h1 className={styles.title}>
+    <Navbar color="faded" light color="warning">
+      <NavbarBrand href="/" className="mr-auto">
         {title}
-      </h1>
-    </header>
+      </NavbarBrand>
+    </Navbar>
   );
 }
 
@@ -18,7 +19,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  title: 'React Todos',
+  title: "React Todos",
 };
 
 export default Header;

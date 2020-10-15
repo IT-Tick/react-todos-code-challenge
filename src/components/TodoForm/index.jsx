@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { Input } from "reactstrap";
 import { todosAction } from "../../redux/actions";
 
 import styles from "./styles.module.sass";
@@ -16,7 +17,7 @@ function TodoForm({ addTodo }) {
 
   return (
     <>
-      <input
+      <Input
         type="text"
         placeholder="What do you have to do? (Press Enter to add todo)"
         className={styles.input}

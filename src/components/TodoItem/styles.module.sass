@@ -4,25 +4,22 @@
     padding: 25px 30px
     background-color: #eee
     border: 1px solid #888
-    margin-bottom: 25px
 
 .title
     margin: 0 0 40px
     font-family: sans-serif
-    width: 100%
-    color: black
-    font-size: 30px
+    width: 100%    
+    font-size: 30px !important
     &__enabled
         @extend .title
-
+        color: black
     &__disabled
-        @extend .title
-        font-size: 30px
-        background: transparent
-        border: none
-        padding: 1px 2px
-    
-    
+        @extend .title        
+        background: transparent !important
+        color: white !important
+        border: none !important
+    @media (max-width: 575px)
+        font-size: 24px !important
 
 @mixin button()
     display: inline-block
@@ -35,8 +32,7 @@
         margin-right: 0
 
 .completeBtn
-    @include button()
-    background-color: #0a0
+    @include button()    
     color: #fff
 
 .deleteBtn

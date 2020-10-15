@@ -4,7 +4,7 @@ import TodoItem from "../TodoItem";
 
 function TodoList({ todos }) {
   const renderTodos = todos.map((todo) => (
-    <TodoItem todoText={todo.title} key={todo.id} todoId={todo.id} />
+    <TodoItem todoData={todo} key={todo.id} />
   ));
   return <div>{renderTodos}</div>;
 }
