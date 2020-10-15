@@ -7,7 +7,7 @@ export const Context = createContext();
 const initialState = {
   todos: [
     { id: getRandomNumber([]), title: 'task 1', completed: false },
-    { id: getRandomNumber([]), title: 'task 2', completed: false }
+    { id: getRandomNumber([]), title: 'task 2', completed: true }
   ]
 }
 

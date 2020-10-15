@@ -23,7 +23,8 @@ function EditModal({ todo, dispatch }) {
   
   return (
     <>
-      <button className={styles.editBtn} variant="primary" onClick={handleShow}>
+      <button className={todo.completed ? styles.disabledBtn : styles.editBtn}
+       variant="primary" disabled = {todo.completed} onClick={handleShow}>
         Edit
       </button>
 
