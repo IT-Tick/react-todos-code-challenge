@@ -1,12 +1,26 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
 import styles from '../TodoItem/styles.module.sass'
-function EditModal({ todo }) {
+function EditModal({ todo, dispatch }) {
   const [show, setShow] = useState(false);
   const [newTitle, setNewTitle] = useState(todo.title)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleEdit = () => {
+    if (!newTitle)
+    return;
+    
+    dispatch({
+      type: 'EDIT_TODO',
+      payload: {
+        id: todo.id,
+        newTitle: newTitle
+      }
+    })
+    handleClose();
+  }
+  
   return (
     <>
       <button className={styles.editBtn} variant="primary" onClick={handleShow}>
@@ -26,7 +40,7 @@ function EditModal({ todo }) {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleEdit}>
             Save Changes
           </Button>
         </Modal.Footer>
