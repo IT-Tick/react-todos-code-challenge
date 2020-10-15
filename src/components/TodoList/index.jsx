@@ -5,11 +5,11 @@ function TodoList() {
   const [state, dispatch] = useContext(Context)
   return (
     <div>
-      {state.todos.map(todo => (
-        <h1>
-          {todo.title}
-        </h1>
-      ))}
+      {
+        state.todos.map((todo, index) => {
+          return (<TodoItem key={index} todo={todo} />)
+        })
+      }
     </div>
   );
 }
