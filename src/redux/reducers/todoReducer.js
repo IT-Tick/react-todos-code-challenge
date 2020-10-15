@@ -14,8 +14,8 @@ export default function (state = initialState, action) {
             return { ...state, todosData: state.todosData.concat({ id: state.todosData.length, title: action.payload }) }
 
         case types.EDIT_TODO:
-            const updatedTodos = state.todosData.forEach(todo => {
-                if (todo.id === action.payload.todoId) return action.payload.todo
+            const updatedTodos = state.todosData.map(todo => {
+                if (todo.id === action.payload.todoId) return { ...todo, title: action.payload.todo }
                 return todo
             })
             return { ...state, todosData: updatedTodos }

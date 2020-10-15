@@ -9,6 +9,20 @@
 .title
     margin: 0 0 40px
     font-family: sans-serif
+    width: 100%
+    color: black
+    font-size: 30px
+    &__enabled
+        @extend .title
+
+    &__disabled
+        @extend .title
+        font-size: 30px
+        background: transparent
+        border: none
+        padding: 1px 2px
+    
+    
 
 @mixin button()
     display: inline-block
